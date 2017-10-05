@@ -1,0 +1,2 @@
+写了个jpa的测试程序，本想把repository放在项目外面再扫描，发现@Repository无法被ComponentScan扫描到，只好加到里面了
+mybatis有个@Mapping的映射可以扫描真希望这也能这样
