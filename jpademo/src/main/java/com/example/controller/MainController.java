@@ -14,14 +14,18 @@ public class MainController {
     @Autowired
     private UserRepository userRepository;
 
+    @GetMapping("/")
+    public String showPublic(){
+        return "薛瑞最帅";
+    }
+
     @GetMapping("/test")
     public List<Resource> respUser(){
-        return userRepository.findAllById(2);
+        return userRepository.findAllById(3);
     }
 
     @GetMapping("/all")
     public List<Resource> findAll(){
-        System.out.println(userRepository.findAll());
         return userRepository.findAll();
     }
 
