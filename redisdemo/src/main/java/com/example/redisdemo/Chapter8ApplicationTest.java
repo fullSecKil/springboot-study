@@ -5,18 +5,18 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.IntStream;
+
+import static java.util.Arrays.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -30,7 +30,7 @@ public class Chapter8ApplicationTest {
     @Test
     public void test(){
 
-        stringRedisTemplate.delete(Arrays.asList("k1","battcn:user:1","k2"));
+        stringRedisTemplate.delete(asList("k1","battcn:user:1","k2"));
         //redisTemplate.delete("battcn:list:1");
         //执行服务线程池   线程数
         ExecutorService executorService = Executors.newFixedThreadPool(1000);

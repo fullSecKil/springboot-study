@@ -22,7 +22,6 @@ public class RedisConfig extends CachingConfigurerSupport {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(redisConnectionFactory);
         container.addMessageListener(listenerAdapter, new PatternTopic("chat"));
-
         return container;
     }
 
