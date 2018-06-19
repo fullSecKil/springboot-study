@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>访问model</h3>
+    <div>
+        <p th:utext="#{home.welcome}">Welcome to our grocery store!</p>
+        <span th:text="${#locale.country}">
+            US
+        </span>
+        <span th:object="${person}">
+            <p>Name: <span th:text="*{name}">Sebastian</span> </p>
+            <p>Age: <span th:text="*{age}">21</span> </p>
+        </span>
+    </div>
+
+    <div th:if="${not #lists.isEmpty(personList)}">
+        <ul>
+            <li th:each="user : ${personList}">
+                <span th:text="${user.name}"></span>
+                <span th:text="${user.age}"></span>
+                <button th:onlick="'getName(\''+${user.name}+'\');'">获得名字</button>
+            </li>
+        </ul>
+    </div>
+    <script th:inline="javascript">
+        var single = [[${user}]];
+        console.log(single.name+"/"+single.age);
+        function getName(name) {
+            console.log(name);
+        }
+    </script>
+</body>
+</html>
