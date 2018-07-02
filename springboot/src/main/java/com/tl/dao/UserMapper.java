@@ -8,7 +8,12 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-
+    /**
+     *getUser
+     *
+     * @param age
+     * @return List<User>
+     */
     @Select("select id,username,age,password,image,isactivity from user where age=#{age}")
     public List<User> getUser(String age);
 }

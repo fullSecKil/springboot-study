@@ -34,7 +34,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()        // 注销行为任意访问
                 .and().rememberMe().tokenValiditySeconds(2419200)
                 ;
-
     }
 
     @Autowired
