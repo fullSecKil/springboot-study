@@ -30,7 +30,8 @@ public class FileUploadController {
         log.info("[文件类型] - [{}]", file.getContentType());
         log.info("[文件名称] - [{}]", file.getOriginalFilename());
         log.info("[文件大小] - [{}]", file.getSize());
-        file.transferTo(new File("E:\\download\\"+file.getOriginalFilename()));
+        //file.transferTo(new File("E:\\download\\"+file.getOriginalFilename()));
+        file.transferTo(new File(file.getOriginalFilename()));
         Map<String, String> result = new HashMap<>();
         result.put("contentType", file.getContentType());
         result.put("fileName", file.getOriginalFilename());

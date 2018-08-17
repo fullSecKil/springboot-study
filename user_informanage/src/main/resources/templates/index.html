@@ -117,7 +117,7 @@ font-size: 16px;"> 最后一次登录 : 30 May 2014 &nbsp;
                             Hello <span sec:authentication="name">someone</span>
                         </div>
                         <h5><span sec:authentication="authenticated"/>，很高兴见到你。</h5>
-                        <div sec:authorize="hasRole('ROLE_ADMIN') and principal.username=='abc'">
+                        <div sec:authorize="hasRole('ROLE_ADMIN') and principal.username=='user123'">
                             has role admin <a th:href="@{/a}" class="btn btn-danger square-btn-adjust">登出</a>
                         </div>
                         <div sec:authorize-url="/a">
